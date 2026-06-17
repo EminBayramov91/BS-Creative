@@ -1,0 +1,45 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-ink);
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Top fade — keeps the header readable over bright frames */
+.fadeTop {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Bottom fade — blends the video into the next (black) section */
+.fadeBottom {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 33.3333%;
+  background: linear-gradient(to bottom, transparent, var(--color-ink));
+}

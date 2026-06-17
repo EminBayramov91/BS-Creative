@@ -1,0 +1,168 @@
+.section {
+  position: relative;
+  scroll-margin-top: 7rem;
+  overflow: hidden;
+  background-color: var(--color-ink);
+  padding: 96px 24px;
+}
+@media (min-width: 640px) {
+  .section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .section {
+    padding: 128px 102px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 56px;
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.intro {
+  position: relative;
+}
+
+/* Frame 67 — striped decoration. CSS approximation; swap for the exported
+   SVG/PNG from Figma when available. */
+.pattern {
+  pointer-events: none;
+  position: absolute;
+  right: -64px;
+  top: 50%;
+  display: none;
+  height: 466px;
+  width: 501px;
+  transform: translateY(-50%);
+  background-image:
+    radial-gradient(55% 45% at 65% 55%, rgba(9, 55, 55, 0.65) 0%, rgba(9, 55, 55, 0) 70%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 250, 242, 0.12) 0px,
+      rgba(255, 250, 242, 0.12) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(70% 70% at 50% 50%, #000 35%, transparent 100%);
+}
+@media (min-width: 1024px) {
+  .pattern {
+    display: block;
+  }
+}
+
+.introContent {
+  position: relative;
+  z-index: 10;
+  max-width: 420px;
+}
+.heading {
+  text-align: right;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-cream);
+}
+@media (min-width: 640px) {
+  .heading {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 48px;
+    line-height: 1.15;
+  }
+}
+.description {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.625;
+  color: var(--color-cream);
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  max-width: 636px;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 1024px) {
+  .form {
+    justify-self: end;
+  }
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Inputs + textarea share the cream field look; radius 8px (Figma) */
+.field,
+.textarea {
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--color-cream);
+  text-align: right;
+  font-size: 16px;
+  color: var(--color-brand);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+.field::placeholder,
+.textarea::placeholder {
+  color: rgba(9, 55, 55, 0.55);
+}
+.field:focus,
+.textarea:focus {
+  box-shadow: 0 0 0 2px rgba(9, 55, 55, 0.4);
+}
+
+.field {
+  height: 64px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.textarea {
+  height: 149px;
+  resize: none;
+  padding: 16px 20px;
+}
+
+.submit {
+  height: 64px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--color-brand);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-cream);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.submit:hover {
+  background-color: var(--color-brand-dark);
+}

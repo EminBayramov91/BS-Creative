@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import styles from "./Header.module.css";
 
 const navLinks = [
   { href: "#about", label: "من نحن" },
@@ -13,42 +14,32 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-ink">
-      {/* px = 102px desktop side padding, py = 24px (Figma) */}
-      <div className="flex items-center justify-between px-6 py-6 sm:px-10 lg:px-[102px]">
+    <header className={styles.header}>
+      <div className={styles.inner}>
         {/* Logo — top-right corner (RTL start) */}
-        <a href="#top" aria-label="BS Creative" className="shrink-0">
+        <a href="#top" aria-label="BS Creative" className={styles.logo}>
           <Image
             src="/logo.png"
             alt="BS Creative"
             width={134}
             height={53}
             priority
-            className="h-auto w-[112px] lg:w-[134px]"
+            className={styles.logoImg}
           />
         </a>
 
         {/* Desktop nav (center) */}
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className={styles.nav}>
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-base font-medium text-cream/80 transition-colors hover:text-cream"
-            >
+            <a key={link.href} href={link.href} className={styles.navLink}>
               {link.label}
             </a>
           ))}
         </nav>
 
         {/* CTA + mobile toggle (RTL end / left) */}
-        <div className="flex items-center gap-3">
-          {/* Button spec (Figma): IBM Plex 16/400, radius 8px, padding 16/24,
-              default cream bg + brand text, hover swaps to brand bg + cream text */}
-          <a
-            href="#contact"
-            className="hidden rounded-lg bg-cream px-6 py-4 text-base font-normal leading-none text-brand transition-colors hover:bg-brand hover:text-cream md:inline-block"
-          >
+        <div className={styles.actions}>
+          <a href="#contact" className={styles.cta}>
             اطلب العرض
           </a>
           <button
@@ -56,7 +47,7 @@ export default function Header() {
             aria-label="القائمة"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center text-cream md:hidden"
+            className={styles.burger}
           >
             {open ? (
               <svg
@@ -89,14 +80,14 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="border-t border-white/10 bg-ink px-6 py-5 md:hidden">
-          <ul className="flex flex-col gap-4">
+        <nav className={styles.mobileMenu}>
+          <ul className={styles.mobileList}>
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block text-lg font-medium text-cream"
+                  className={styles.mobileLink}
                 >
                   {link.label}
                 </a>
@@ -106,7 +97,7 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="inline-block rounded-lg bg-cream px-6 py-3.5 text-base font-normal text-brand"
+                className={styles.mobileCta}
               >
                 اطلب العرض
               </a>

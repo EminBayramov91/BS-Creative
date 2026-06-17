@@ -1,10 +1,11 @@
 import Image from "next/image";
+import styles from "./Footer.module.css";
 
 function LinkedInIcon() {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="h-[20px] w-[20px]"
+      className={styles.iconLinkedin}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
@@ -25,7 +26,7 @@ function InstagramIcon() {
   return (
     <svg
       viewBox="0 0 27 25"
-      className="h-[20px] w-auto"
+      className={styles.iconInstagram}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
@@ -53,22 +54,22 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-cream text-ink">
-      <div className="px-6 py-14 sm:px-10 lg:px-[102px] lg:py-16">
-        <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:justify-start md:gap-[185px]">
-          {/* Logo — right (RTL start). Cream PNG flattened to black for the light bg. */}
-          <a href="#top" aria-label="BS Creative" className="shrink-0">
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <div className={styles.row}>
+          {/* Logo — right (RTL start) */}
+          <a href="#top" aria-label="BS Creative" className={styles.logo}>
             <Image
               src="/logo.png"
               alt="BS Creative"
               width={195}
               height={77}
-              className="h-auto w-[195px] brightness-0"
+              className={styles.logoImg}
             />
           </a>
 
           {/* Social icons — grey circle by default, main brand on hover */}
-          <div className="flex items-center gap-4">
+          <div className={styles.socials}>
             {socials.map(({ label, href, Icon }) => (
               <a
                 key={label}
@@ -76,7 +77,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#383D38] transition-colors hover:bg-brand"
+                className={styles.socialLink}
               >
                 <Icon />
               </a>
@@ -84,18 +85,14 @@ export default function Footer() {
           </div>
 
           {/* Contact — left (RTL end). Phone tel:, email mailto: */}
-          <address className="flex flex-col gap-2 text-center text-base font-normal not-italic md:text-right">
-            <a
-              href="tel:+966535976279"
-              dir="ltr"
-              className="transition-colors hover:text-brand"
-            >
+          <address className={styles.contact}>
+            <a href="tel:+966535976279" dir="ltr" className={styles.contactLink}>
               +966 535 976 279
             </a>
             <a
               href="mailto:info@bscreative.com"
               dir="ltr"
-              className="transition-colors hover:text-brand"
+              className={styles.contactLink}
             >
               info@bscreative.com
             </a>
@@ -103,10 +100,7 @@ export default function Footer() {
           </address>
         </div>
 
-        {/* Copyright */}
-        <p className="mt-16 text-center text-base font-normal text-[#a6a6a6] md:text-right">
-          © 2026 جميع الحقوق محفوظة
-        </p>
+        <p className={styles.copyright}>© 2026 جميع الحقوق محفوظة</p>
       </div>
     </footer>
   );

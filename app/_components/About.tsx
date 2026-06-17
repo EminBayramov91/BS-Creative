@@ -1,3 +1,5 @@
+import styles from "./About.module.css";
+
 // NOTE: Arabic body copy transcribed from low-res Figma screenshots — verify /
 // replace with the exact text pasted from Figma (especially the left column).
 
@@ -14,24 +16,15 @@ const sideText = `إحنا مو وكالة... إحنا عقول بتمرّن ب�
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="scroll-mt-28 bg-ink px-6 pb-12 pt-28 sm:px-10 lg:px-[102px] lg:pt-[140px]"
-    >
-      <div className="grid grid-cols-1 gap-x-16 gap-y-10 md:grid-cols-2">
+    <section id="about" className={styles.section}>
+      <div className={styles.grid}>
         {/* Row 1 — heading (right), empty (left) */}
-        <h2 className="text-right text-3xl font-bold leading-tight text-cream sm:text-4xl lg:text-[48px] lg:leading-none">
-          يا هلا.... إحنا بس كريتيف.
-        </h2>
-        <div className="hidden md:block" aria-hidden />
+        <h2 className={styles.heading}>يا هلا.... إحنا بس كريتيف.</h2>
+        <div className={styles.spacer} aria-hidden />
 
         {/* Row 2 — main paragraph (right), side paragraph (left) */}
-        <p className="whitespace-pre-line text-right text-base font-normal leading-[1.6] text-cream/80">
-          {mainText}
-        </p>
-        <p className="whitespace-pre-line text-right text-base font-normal leading-[1.6] text-cream/80">
-          {sideText}
-        </p>
+        <p className={styles.paragraph}>{mainText}</p>
+        <p className={styles.paragraph}>{sideText}</p>
       </div>
     </section>
   );

@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 50;
+  background-color: var(--color-ink);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+@media (min-width: 640px) {
+  .inner {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .inner {
+    padding-left: 102px;
+    padding-right: 102px;
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+}
+.logoImg {
+  height: auto;
+  width: 112px;
+}
+@media (min-width: 1024px) {
+  .logoImg {
+    width: 134px;
+  }
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
+.navLink {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 250, 242, 0.8);
+  transition: color 0.2s;
+}
+.navLink:hover {
+  color: var(--color-cream);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* CTA button — Figma: radius 8px, padding 16/24, IBM Plex 16/400.
+   default cream bg + brand text; hover swaps to brand bg + cream text */
+.cta {
+  display: none;
+  border-radius: 8px;
+  background-color: var(--color-cream);
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-brand);
+  transition: background-color 0.2s, color 0.2s;
+}
+@media (min-width: 768px) {
+  .cta {
+    display: inline-block;
+  }
+}
+.cta:hover {
+  background-color: var(--color-brand);
+  color: var(--color-cream);
+}
+
+.burger {
+  display: flex;
+  height: 44px;
+  width: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-cream);
+}
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--color-ink);
+  padding: 20px 24px;
+}
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobileLink {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-cream);
+}
+.mobileCta {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: var(--color-cream);
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-brand);
+}

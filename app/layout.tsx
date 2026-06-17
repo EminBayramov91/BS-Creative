@@ -21,12 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ar"
-      dir="rtl"
-      className={`${ibmPlex.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="ar" dir="rtl" className={ibmPlex.variable}>
+      <body>{children}</body>
     </html>
   );
 }
