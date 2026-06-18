@@ -4,18 +4,9 @@
 }
 
 .inner {
-  padding: 56px 24px;
-}
-@media (min-width: 640px) {
-  .inner {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-@media (min-width: 1024px) {
-  .inner {
-    padding: 64px 102px;
-  }
+  width: min(1240px, 100% - 48px);
+  margin-inline: auto;
+  padding-block: 64px;
 }
 
 .row {

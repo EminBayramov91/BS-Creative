@@ -78,33 +78,33 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <nav className={styles.mobileMenu}>
-          <ul className={styles.mobileList}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={styles.mobileLink}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li>
+      {/* Mobile menu (animated dropdown) */}
+      <nav
+        className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}
+      >
+        <ul className={styles.mobileList}>
+          {navLinks.map((link) => (
+            <li key={link.href}>
               <a
-                href="#contact"
+                href={link.href}
                 onClick={() => setOpen(false)}
-                className={styles.mobileCta}
+                className={styles.mobileLink}
               >
-                اطلب العرض
+                {link.label}
               </a>
             </li>
-          </ul>
-        </nav>
-      )}
+          ))}
+          <li>
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className={styles.mobileCta}
+            >
+              اطلب العرض
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }

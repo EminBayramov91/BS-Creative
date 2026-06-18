@@ -1,0 +1,138 @@
+.section {
+  width: min(1240px, 100% - 48px);
+  margin: 0 auto 140px;
+  padding-block: 25px;
+  scroll-margin-top: 7rem;
+  background-color: var(--color-ink);
+}
+
+.heading {
+  margin-bottom: 28px;
+  text-align: right;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-cream);
+}
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 48px;
+  }
+}
+
+.list {
+  position: relative;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 26px 28px;
+  border-bottom: 1px solid rgba(255, 250, 242, 0.16);
+  transition: background-color 0.3s ease;
+}
+.rowActive {
+  background-color: var(--color-brand);
+  border-radius: 8px;
+  border-bottom-color: transparent;
+}
+
+/* number + title grouped on the right (RTL start) */
+.head {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 48px;
+}
+
+/* number (01–08) — IBM Plex 400 / 12px, cream — far right */
+.number {
+  width: 36px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-cream);
+}
+
+/* title — IBM Plex SemiBold 600 / 20px; active → Brand Secondary */
+.title {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-cream);
+  transition: color 0.3s ease;
+}
+.rowActive .title {
+  color: var(--color-brand-secondary);
+}
+
+/* description — IBM Plex 400 / 14px, cream. Fixed width so text-align:right
+   gives every row the same right edge (proper RTL), not a content-hugged box. */
+.desc {
+  flex: 0 0 48%;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-cream);
+}
+
+/* Floating preview that follows the cursor (desktop only) */
+.float {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 174px;
+  overflow: hidden;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+  transition: opacity 0.25s ease;
+  will-change: transform;
+}
+.floatVisible {
+  opacity: 1;
+}
+.floatImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.floatImgActive {
+  opacity: 1;
+}
+
+/* Touch devices: no hover → drop the floating preview, stack the row */
+@media (hover: none) {
+  .float {
+    display: none;
+  }
+}
+@media (max-width: 1023px) {
+  .row {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 16px;
+  }
+  .head {
+    gap: 24px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .desc {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}

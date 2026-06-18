@@ -1,18 +1,9 @@
 .section {
+  width: min(1240px, 100% - 48px);
+  margin: 0 auto 140px;
+  padding-block: 25px;
   scroll-margin-top: 7rem;
   background-color: var(--color-ink);
-  padding: 112px 24px 48px;
-}
-@media (min-width: 640px) {
-  .section {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-@media (min-width: 1024px) {
-  .section {
-    padding: 140px 102px 48px;
-  }
 }
 
 .grid {

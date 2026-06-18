@@ -10,7 +10,7 @@ const ibmPlex = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "بس كريتيف | BS Creative",
+  title: "BS Creative",
   description:
     "وكالة متخصصة في إنتاج الصور والفيديو وتجارب العلامات التجارية. تجربتك معنا... غير!",
 };

@@ -12,6 +12,10 @@
   --font-sans: var(--font-ibm-plex);
 }
 
+/* Layout: content sits in a centered 1240px container.
+   (hardcoded per section — a globals var gets pruned by Lightning CSS since
+   it's referenced only from the component *.module.css files.) */
+
 html {
   height: 100%;
   scroll-behavior: smooth;

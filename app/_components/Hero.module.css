@@ -3,6 +3,7 @@
   height: 100svh;
   min-height: 600px;
   width: 100%;
+  margin-bottom: 140px;
   overflow: hidden;
   background-color: var(--color-ink);
 }

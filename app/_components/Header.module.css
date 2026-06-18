@@ -8,22 +8,12 @@
 }
 
 .inner {
+  width: min(1240px, 100% - 48px);
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
-}
-@media (min-width: 640px) {
-  .inner {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-@media (min-width: 1024px) {
-  .inner {
-    padding-left: 102px;
-    padding-right: 102px;
-  }
+  padding-block: 24px;
 }
 
 .logo {
@@ -103,9 +93,22 @@
 }
 
 .mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background-color: var(--color-ink);
   padding: 20px 24px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+.mobileMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 @media (min-width: 768px) {
   .mobileMenu {

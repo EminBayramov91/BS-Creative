@@ -1,0 +1,113 @@
+/* Full-width section (outside the 1240 container) */
+.section {
+  position: relative;
+  margin-bottom: 140px;
+  padding-top: 40px;
+  padding-bottom: 56px;
+  overflow: hidden;
+}
+
+/* Background pattern stuck to the bottom edge, full width */
+.bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 264px;
+  background-image: url("/slider-bg.svg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Heading block — aligned to the 1240 container right edge */
+.head {
+  position: relative;
+  z-index: 1;
+  width: min(1240px, 100% - 48px);
+  margin: 0 auto 44px;
+  text-align: right;
+}
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-brand-secondary);
+}
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 48px;
+  }
+}
+.subtitle {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+/* Center-mode slider */
+.slider {
+  position: relative;
+  z-index: 1;
+  direction: ltr; /* keep the track LTR so the centering math holds under RTL */
+  overflow: hidden;
+  padding-block: 40px;
+}
+.track {
+  position: relative;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  gap: 40px;
+  transition: transform 0.5s ease;
+}
+.slide {
+  flex: 0 0 300px;
+  height: 200px;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.slideActive {
+  transform: scale(1.22);
+  z-index: 2;
+}
+.slideImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Pagination dots */
+.dots {
+  position: relative;
+  z-index: 1;
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background-color: #5c5c5c;
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+.dotActive {
+  width: 22px;
+  background-color: var(--color-brand);
+}
