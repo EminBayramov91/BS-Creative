@@ -34,6 +34,9 @@ const logos: Logo[] = [
   { src: "/logos/new-diplomatic.png", alt: "Diplomatic Quarter", width: 134, height: 50 },
   { src: "/logos/new-luxury.png", alt: "Luxury KSA", width: 424, height: 50 },
   { src: "/logos/new-spirit.png", alt: "روح السعودية", width: 104, height: 50 },
+  // Two more client logos (2026-06-21)
+  { src: "/logos/new-badael.png", alt: "Badael", width: 192, height: 121 },
+  { src: "/logos/new-dzrt.png", alt: "DZRT", width: 340, height: 340 },
 ];
 
 export default function Logos() {
