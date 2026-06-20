@@ -1,0 +1,14 @@
+# Cache policy for the static export on Hostinger (Apache / LiteSpeed).
+# Goal: visitors always get the latest deploy WITHOUT clearing their browser cache.
+<IfModule mod_headers.c>
+  # Content-hashed build assets get a new URL every build → cache them hard.
+  <FilesMatch "\.(js|mjs|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML, RSC payloads and media reuse the same filenames across deploys, so the
+  # browser must revalidate (gets a tiny 304 if unchanged) instead of serving stale.
+  <FilesMatch "\.(html|json|txt|jpe?g|png|gif|svg|webp|avif|ico|mp4|webm)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
