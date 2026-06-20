@@ -23,7 +23,8 @@
   animation-play-state: paused;
 }
 
-/* Desaturate to monochrome but keep each logo's own contrast/detail.
+/* Logos shown in their ORIGINAL colors (client: keep colors, not white, so each
+   stays visible on the dark background).
    Trailing margin sits on every item (incl. the last), so it doubles as the
    gap between logos AND keeps the -50% loop length exact. */
 .logo {
@@ -31,7 +32,6 @@
   height: auto;
   flex-shrink: 0;
   margin-inline-end: 64px;
-  filter: grayscale(1);
 }
 
 @keyframes logos-scroll {
