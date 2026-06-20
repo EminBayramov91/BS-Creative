@@ -47,3 +47,7 @@ AGENTS.md
 
 # JetBrains IDE
 .idea/
+
+# local deploy bundle / scratch (not for the repo)
+bs-creative-site.zip
+.ziptest/

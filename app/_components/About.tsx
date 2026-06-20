@@ -3,8 +3,7 @@ import styles from "./About.module.css";
 // NOTE: Arabic body copy transcribed from low-res Figma screenshots — verify /
 // replace with the exact text pasted from Figma (especially the left column).
 
-const mainText = `يا هلا... إحنا بس كريتيف.
-إحنا الوكالة اللي بدأت من لحظة صمت... من قرار بسيط بس كان ثقيل:
+const mainText = `إحنا الوكالة اللي بدأت من لحظة صمت... من قرار بسيط بس كان ثقيل:
 «القادم بيكون مختلف.»
 
 عشر شهور وإحنا نشتغل بدون صوت... نبحث، نجرب، نكبّر أفكار صغيرة ونشوفها تكبر قدّامنا. ما كنا نحتاج نعلن... كنا نحتاج نثبت.

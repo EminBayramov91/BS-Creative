@@ -1,27 +1,6 @@
 import Image from "next/image";
 import styles from "./Footer.module.css";
 
-function LinkedInIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={styles.iconLinkedin}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <path
-        d="M0.828173 4.61156C0.275065 4.09802 0 3.46236 0 2.70602C0 1.94969 0.276536 1.28606 0.828173 0.771046C1.38128 0.257505 2.09326 0 2.96558 0C3.83791 0 4.52195 0.257505 5.07358 0.771046C5.62669 1.28459 5.90176 1.93056 5.90176 2.70602C5.90176 3.48149 5.62522 4.09802 5.07358 4.61156C4.52047 5.1251 3.81878 5.38261 2.96558 5.38261C2.11239 5.38261 1.38128 5.1251 0.828173 4.61156ZM5.43692 7.55744V23.3021H0.46336V7.55744H5.43692Z"
-        fill="#FEFFFC"
-      />
-      <path
-        d="M21.9935 9.11439C23.0777 10.2916 23.619 11.9072 23.619 13.9643V23.0256H18.8956V14.603C18.8956 13.5656 18.6264 12.7592 18.0895 12.1853C17.5525 11.6115 16.8288 11.3231 15.9226 11.3231C15.0165 11.3231 14.2927 11.61 13.7558 12.1853C13.2188 12.7592 12.9496 13.5656 12.9496 14.603V23.0256H8.19824V7.51491H12.9496V9.57201C13.4307 8.88631 14.0794 8.34482 14.8944 7.94606C15.7093 7.54729 16.6258 7.34863 17.6452 7.34863C19.4605 7.34863 20.9109 7.93722 21.9935 9.11292V9.11439Z"
-        fill="#FEFFFC"
-      />
-    </svg>
-  );
-}
-
 function InstagramIcon() {
   return (
     <svg
@@ -47,9 +26,26 @@ function InstagramIcon() {
   );
 }
 
+function TikTokIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={styles.iconTiktok}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path
+        d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
 const socials = [
-  { label: "Instagram", href: "https://www.instagram.com/", Icon: InstagramIcon },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", Icon: LinkedInIcon },
+  { label: "Instagram", href: "https://www.instagram.com/bscreative.sa", Icon: InstagramIcon },
+  { label: "TikTok", href: "https://www.tiktok.com/@bscreative.sa", Icon: TikTokIcon },
 ];
 
 export default function Footer() {
@@ -84,10 +80,16 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Contact — left (RTL end). Phone tel:, email mailto: */}
+          {/* Contact — left (RTL end). Phone → WhatsApp chat, email mailto: */}
           <address className={styles.contact}>
-            <a href="tel:+966535976279" dir="ltr" className={styles.contactLink}>
-              +966 535 976 279
+            <a
+              href="https://wa.me/966506055708"
+              target="_blank"
+              rel="noopener noreferrer"
+              dir="ltr"
+              className={styles.contactLink}
+            >
+              +966 50 605 5708
             </a>
             <a
               href="mailto:info@bscreative.com"

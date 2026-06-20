@@ -4,22 +4,28 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./Portfolio.module.css";
 
-// 5 unique works, repeated so there's a longer reel to scroll
+// 14 client work photos (landscape), shown in a wide-card reel.
 const base = [
   "/portfolio/1.jpg",
   "/portfolio/2.jpg",
   "/portfolio/3.jpg",
   "/portfolio/4.jpg",
   "/portfolio/5.jpg",
-  "/portfolio/1.jpg",
-  "/portfolio/2.jpg",
-  "/portfolio/3.jpg",
+  "/portfolio/6.jpg",
+  "/portfolio/7.jpg",
+  "/portfolio/8.jpg",
+  "/portfolio/9.jpg",
+  "/portfolio/10.jpg",
+  "/portfolio/11.jpg",
+  "/portfolio/12.jpg",
+  "/portfolio/13.jpg",
+  "/portfolio/14.jpg",
 ];
 const N = base.length;
 // triple the reel so the loop is seamless (prev copy | real | next copy)
 const reel = [...base, ...base, ...base];
 
-const CARD_W = 240;
+const CARD_W = 300; // landscape card width
 const GAP = 24;
 const STEP = CARD_W + GAP;
 
@@ -113,8 +119,8 @@ export default function Portfolio() {
               <Image
                 src={src}
                 alt=""
-                width={480}
-                height={720}
+                width={600}
+                height={400}
                 className={styles.slideImg}
               />
             </div>

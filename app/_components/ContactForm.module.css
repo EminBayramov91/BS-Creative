@@ -147,3 +147,22 @@
 .submit:hover {
   background-color: var(--color-brand-dark);
 }
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Inline submit feedback */
+.status {
+  margin-top: 4px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.statusSuccess {
+  color: #4ade80;
+}
+.statusError {
+  color: #f87171;
+}

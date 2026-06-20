@@ -21,17 +21,33 @@ const logos = [
 export default function Logos() {
   return (
     <section id="logos" className={styles.section}>
-      <div className={styles.row}>
-        {logos.map((logo) => (
-          <Image
-            key={logo.src}
-            src={logo.src}
-            alt={logo.alt}
-            width={logo.width}
-            height={logo.height}
-            className={styles.logo}
-          />
-        ))}
+      <div className={styles.marquee}>
+        {/* Track holds two identical copies so the scroll loops seamlessly
+            (the animation moves it by exactly -50% = one copy). */}
+        <div className={styles.track}>
+          {logos.map((logo) => (
+            <Image
+              key={logo.src}
+              src={logo.src}
+              alt={logo.alt}
+              width={logo.width}
+              height={logo.height}
+              className={styles.logo}
+            />
+          ))}
+          {/* Duplicate set — decorative only, hidden from screen readers */}
+          {logos.map((logo) => (
+            <Image
+              key={`${logo.src}-dup`}
+              src={logo.src}
+              alt=""
+              width={logo.width}
+              height={logo.height}
+              className={styles.logo}
+              aria-hidden
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

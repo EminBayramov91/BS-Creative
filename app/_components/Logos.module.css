@@ -6,26 +6,50 @@
   background-color: var(--color-ink);
 }
 
-.row {
-  display: flex;
-  direction: ltr; /* logo strip reads left→right regardless of page RTL */
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px 40px;
+/* Clip the scrolling track to the section width */
+.marquee {
+  overflow: hidden;
+  direction: ltr; /* logo strip reads + scrolls left→right regardless of page RTL */
 }
 
-/* Desaturate to monochrome but keep each logo's own contrast/detail */
+/* Two copies sit side by side; translateX(-50%) loops seamlessly */
+.track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: logos-scroll 30s linear infinite;
+}
+.track:hover {
+  animation-play-state: paused;
+}
+
+/* Desaturate to monochrome but keep each logo's own contrast/detail.
+   Trailing margin sits on every item (incl. the last), so it doubles as the
+   gap between logos AND keeps the -50% loop length exact. */
 .logo {
   width: auto;
   height: auto;
+  flex-shrink: 0;
+  margin-inline-end: 64px;
   filter: grayscale(1);
 }
 
+@keyframes logos-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-@media (max-width: 639px) {
-  .row {
+/* Respect reduced-motion: stop the scroll, fall back to a centered wrapped row */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 28px 32px;
+    gap: 28px 40px;
+  }
+  .logo {
+    margin-inline-end: 0;
   }
 }
